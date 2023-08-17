@@ -1,0 +1,211 @@
+:root {
+    --jg-main-title-font: 'Tomorrow', sans-serif;
+    --jg-title-font: 'Bebas Neue', sans-serif;
+    --jg-main-subtitle-font: 'Tomorrow', sans-serif;
+    --jg-subtitle-font: 'Fira Sans', sans-serif;
+    --jg-heading-font: 'Bebas Neue', sans-serif;
+    --jg-body-font: 'Roboto', sans-serif;
+    /* basic colors */
+    --jg-dark-color: #212121;
+    --jg-light-color: #deeefb;
+    --jg-background-color: rgba(250, 250, 250, 0.8);
+    /* text styles */
+    --jg-font-size: 1.2rem;
+    --jg-font-weight: 400;
+    --jg-line-height: 1.5rem;
+    --jg-title-color: var(--jg-dark-color);
+    /* my theme */
+    --jg-theme-core: #9d5734;
+    --jg-theme-100: hsl(20, 52%, 91%);
+    --jg-theme-150: hsl(20, 6%, 87%);
+    --jg-theme-200: hsl(20, 51%, 81%);
+    --jg-theme-300: hsl(20, 50%, 71%);
+    --jg-theme-400: hsl(20, 50%, 61%);
+    --jg-theme-500: hsl(20, 46%, 48%);
+    --jg-theme-600: hsl(20, 50%, 41%);
+    --jg-theme-700: hsl(20, 50%, 31%);
+    --jg-theme-800: hsl(20, 50%, 21%);
+    --jg-theme-850: hsl(20, 50%, 16%);
+    --jg-theme-900: hsl(20, 50%, 11%);
+}
+
+/* font-family: 'Tomorrow', sans-serif; */
+/* #region Start Sticky Footer */
+.text-secondary{
+    color: var(--jg-light-color)!important;
+}
+
+.imgicon {
+    display: inline;
+    height: 3.5rem;
+    margin: 0rem .3rem;
+}
+figcaption {
+    color: var(--jg-dark-color);
+    font-size: 0.8rem;
+    text-align: center;
+}
+.footerLogoText {
+    font-size: 1.5rem;
+    font-family: 'Tomorrow', sans-serif;
+}
+
+.mainLogo {
+    height: 3em;
+    margin-left: -1em;
+}
+
+html,
+body {
+    height: 100%;
+}
+body {
+    /* fallback for old browsers */
+    background-color: var(--jg-light-color);
+    display: flex;
+    flex-direction: column;
+    color: var(--jg-dark-color);
+    font-family: var(--jg-body-font);
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+main {
+    background-color: var(--jg-light-color);
+}
+
+.content {
+    flex: 1 0 auto;
+    padding-top: 7.5rem;
+    padding-bottom: 2.5rem;
+}
+.heroCard {
+    min-height: 100%;
+}
+.texthighlight {
+    color: var(--jg-theme-core);
+}
+
+.heroTitle {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: var(--jg-title-font);
+    font-weight: 600;
+}
+.pageHeader {
+    background-color: var(--jg-theme-400);
+    padding-top: 7.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.pageTitle {
+    font-family: var(--jg-title-font);
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 3rem;
+    text-transform: capitalize;
+}
+
+
+.sideNav {
+    border-radius: 25px;
+    
+    background-color: var(--jg-theme-100);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: fit-content;
+    box-shadow: 3px 3px 5px rgba(128, 0, 0, 0.4);
+}
+.editIcons {
+    font-size: 1.5rem;
+    opacity: .9;
+    color: var(--jg-dark-color);
+}
+
+    .editIcons:hover {
+        color: var(--jg-dark-color);
+        font-weight: bold;
+        opacity: 1;
+        cursor: pointer;
+    }
+
+.icon {
+    font-size: 3.5rem;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+/* #endregion  Sticky footer */
+
+.btn-primary {
+    --bs-btn-bg: var(--jg-theme-600);
+    --bs-btn-border-color: var(--jg-theme-600);
+    --bs-btn-hover-bg: var(--jg-theme-700);
+    --bs-btn-hover-border-color: var(--jg-theme700);
+}
+
+
+
+.navbar,
+.footer {
+    background-color: var(--jg-theme-900)!important;
+}
+
+.footer {
+    color: var(--jg-theme-200);
+}
+
+.socialIcons {
+    font-size: 2rem;
+    padding-left: .5rem;
+    color: var(--jg-theme-400);
+    transition: color 0.2s;
+}
+
+
+    .socialIcons:hover {
+        color: var(--jg-theme-core);
+    }
+
+.app-logo {
+    max-width: 200px;
+}
+
+.checkList i {
+    color: var(--jg-theme-core);
+    padding-right: .5rem;
+}
+
+.devIcons {
+    font-size: 4rem;
+    padding-left: .5rem;
+}
+
+.square-img-container {
+    position: relative;
+    background-color: var(--jg-light-color);
+    border-color: var(--jg-theme-600);
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 3px  3px 5px rgba(128, 0, 0, 0.4);
+}
+
+.shadow {
+    box-shadow: 3px 3px 5px rgba(128, 0, 0, 0.4);
+}
+
+    .square-img-container::after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+
+.square-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
