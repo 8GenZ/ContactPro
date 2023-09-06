@@ -1,53 +1,36 @@
 ﻿@using ContactPro.Services.Interfaces;
-@model ContactPro.Models.Contact;
+@model ContactPro.Models.Category;
 @inject IImageService _ImageService;
 
-@{
-    ViewData["Title"] = "Delete";
-}
-
 <h1>Delete</h1>
-<div class="row">
-    <div class="col-12 col-md-8 offset-md-2">
-        <h2>Are you sure?</h2>
-        <p class="text-lead text-muted">This contact will be permanently deleted.</p>
-        <div class="card mb-3">
-            <div class="row g-0">
-                <div class="col-md-4 square-img-container">
-                    <img src="@_ImageService.ConvertByteArrayToFile(Model.ImageData!, Model.ImageType!)" class="square-img rounded-start" alt="...">
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h3>Are you sure?</h3>
+        <p class="text-lead text-muted">This category will be permanently deleted.</p>
+        <div class="card my-3">
+            <div class="card-body">
+                <div class="card-title">
+                    <h3>@Model.Name</h3>
                 </div>
-                <div class="col-md-5">
-                    <div class="card-body">
-                        <h5 class="card-title">@Model.FullName</h5>
-                        <address class="card-text">
-                            @Model.Adress1<br />
-                            @if (!string.IsNullOrEmpty(Model.Adress2))
-                            {
-                                @Model.Adress2
-                                <br />
-                            }
-                            @Model.City, @Model.State @Model.ZipCode
-                        </address>
-                        <div class="card-text">
-                            <span class="fw-bold me-2">Phone:</span>@Model.PhoneNumber
+                <div class="text-muted fs-6">
+                    There @(Model.Contacts.Count == 1 ? "is 1 contact" : $"are {Model.Contacts.Count} contacts")
+                    in this category
+                </div>
+                <div class="d-flex">
+                    @foreach (Contact contact in Model.Contacts)
+                    {
+                        <div class="square-img-container m-2" style="height: 180px; width: 180px;"
+                             data-bs-toggle="tooltip" data-bs-title="@contact.FullName" data-bs-placement="top">
+                            <img class="square-img" src="@_ImageService.ConvertByteArrayToFile(contact.ImageData!, contact.ImageType!)">
                         </div>
-                        <div class="card-text">
-                            <span class="fw-bold me-2">Email:</span>@Model.Email
-                        </div>
-                        <div>
-                            @foreach (Category category in Model.Categories)
-                            {
-                                <span class="badge rounded-pill border border-1 text-dark fw-normal">@category.Name</span>
-                            }
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
-        <form class="d-flex justify-content-between" asp-action="Delete" asp-route-id="@Model.Id">
-            <input hidden asp-for="Id" />
-            <a asp-action="Index" asp-controller="Contacts" class="btn btn-outline-secondary rounded-pill btnLink">Cancel</a>
-            <button type="submit" class="btn btn-danger rounded-pill btnLink">Delete</button>
+        <form asp-action="Delete" class="d-flex justify-content-between pt-3">
+            <input type="hidden" asp-for="Id" />
+            <a asp-action="Index" class="btn btn-outline-secondary rounded-pill btnLink">Cancel</a>
+            <input type="submit" value="Delete" class="btn btn-danger rounded-pill btnLink" />
         </form>
     </div>
 </div>

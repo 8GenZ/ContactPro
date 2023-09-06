@@ -37,7 +37,7 @@ namespace ContactPro.Controllers
         }
 
         // GET: Contacts
-        public async Task<IActionResult> Index(int? categoryId, string? swalMessage = null)
+         public async Task<IActionResult> Index(int? categoryId, string? swalMessage = null)
         {
             ViewData["SwalMessage"] = swalMessage;
             string? userId = _userManager.GetUserId(User);
